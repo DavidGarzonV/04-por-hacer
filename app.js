@@ -15,7 +15,7 @@ switch(comando){
 
     case 'listar':
 
-        let listado = porHacer.getListado();
+        let listado = porHacer.getListado(argv.filtrar);
 
         console.log('==========Por hacer============='.green);
         for (let tarea of listado) {

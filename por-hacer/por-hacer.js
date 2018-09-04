@@ -37,9 +37,19 @@ const crear = (desc) =>{
     return porHacer;
 }
 
-const getListado = () =>{
-    cargarDb();
-    return listadoPorHacer;
+const getListado = (filtrar) =>{
+    
+    cargarDb();    
+
+    
+    let nuevoListado = listadoPorHacer.filter(tarea => tarea.completado == filtrar);     
+    
+    if(nuevoListado.length>0){        
+        return nuevoListado;
+    }else{        
+        return listadoPorHacer;
+    }
+
 }
 
 const actualizar = (desc,completado = true) =>{
